@@ -79,21 +79,21 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Sanchez, Jerry</h1>
 
-          <div class="row ">
+          <div class="row details">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Jerry Sanchez, 16</h4>
               <span class="text-muted">UTAE0341422</span>
             </div>
             <div class="col-xs-6 col-sm-4 ">
-             <p> <b>Birthdate:</b> May 03, 1998<br />
+             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
 			  <b>Race:</b> Hispanic/Latino<br />
 			  <b>School:</b> Lincoln High School<br />
 			 <b>Placement:</b> Jones Family<br />
 			 <b>Open Cases:</b> 1<br /></p>
             </div>
             <div class="col-xs-6 col-sm-4 ">
-        <ul class="nav">   
+        <ul class="nav ">   
 <li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment <span class="label label-danger">overdue</span></a></li>
 <li> <a href="#"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Home Visit </a></li>
 <li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Report Abuse</a></li>
@@ -104,48 +104,55 @@
            
           </div>
 
-          <h2 class="sub-header">Case History</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-				  <th>Date</th>
-                  <th>Type</th>
-                  
-                  <th>Status</th>
-				  <th>Notes</th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>3422</td>
-				  <td>09/12/14</td>
-                  <td>Relocation</td>
-                 
-                  <td>Closed</td>
-                  <td>Relocated to South Hill.</td>
-                </tr>
-                <tr>
-                  <td>3155</td>
-                  <td>09/01/14</td>
-                  <td>Child Abuse</td>
-                  
-                  <td>Pending</td>
-				  <td>School provided visual proof.</td>
-                </tr>
-                <tr>
-                  <td>4433</td>
-                  <td>07/04/09</td>
-                  <td>Placement</td>
-                  <td>Closed</td>
-                  <td>Jerry came into the State's care after...</td>
-                </tr>
-               
-              </tbody>
-            </table>
-          </div>
+          <h2 class="sub-header">Home Visit</h2>
+		  <p>The following may be addressed, as age appropriate, with the child(ren) at least monthly during the worker visit.  </p>
+		  <form>
+		  <div class="checkbox">
+		  <label><input type="checkbox">Discuss the child's feelings of safety in the placement and note any safety concerns.  Assess the child's risk in the placement.  Note concerns about any household members' behaviors/interactions based on worker observation or as discussed with the provider.  Observed safety concerns should be immediately discussed with the provider and then discussed with the supervisor and licensing worker.</label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+		  
+		  <div class="checkbox">  <label> <input type="checkbox">Assess if the child has any feelings of guilt or blame for events which occurred or caused separation from family. Discuss with the child as needed and appropriate. </label></div>
+		  <div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's adjustment to current placement as well as interactions with other family members.  Note changes in household composition or structure. </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div> 
+			
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's loss and grief issues. </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's adjustment and performance at school or daycare if applicable.  </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			
+		  </form>
+          <form class="form-inline">
+		  
+		 <div class="form-group">
+            <label class="control-label " for="Date">Date:</label>
+            <div >
+                <input type="date" class="form-control" id="Date" placeholder="Date">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label " for="ZipCode">Time:</label>
+            <div >
+                <input type="time" class="form-control" id="Date" placeholder="Time">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label" for="ZipCode">Length:</label>
+            <div class="">
+                <input type="number" class="form-control" id="Date" placeholder="Length">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label " for="ZipCode">Case Worker:</label>
+            <div class="">
+               <p class="form-control-static">candace.caseworker</p>
+            </div>
+        </div>
+		  </form>
+		      <form class="form-inline">
+		  
+		 <div class="form-group">
+            <label ><input type="checkbox" class="form-control" id="Date" placeholder="Date"> Walk through of the home</label>
+            
+        </div>
+		
+		  </form>
         </div>
       </div>
     </div>
