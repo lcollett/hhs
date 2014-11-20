@@ -65,7 +65,10 @@ body {
   color: #fff;
   background-color: #428bca;
 }
-
+.details .nav >li >a{
+padding: 0;
+line-height:28px;
+}
 
 /*
  * Main content
@@ -108,3 +111,5 @@ body {
   height:125px;
   
 }
+.tabContent{padding:20px 5px;}
+.list td{vertical-align: middle !important;}
