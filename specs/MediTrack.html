@@ -10,102 +10,45 @@
 
 <pre contenteditable title="MediTrack Features">
 
-# Due Today
-# Medications
-# Patient
-# Settings
+# News feature { image, title, url }
+# My Records
+# Outbreaks
+# News
+# Search
 
-* Due Today
-- list of medications ( # medication details )
-: due ( today, older? )
-: group ( by time of day )
-( snooze )
+# My Records
+    new Record { first, last, birth, gender, location, number, doctor }
+    [ Immunizations | Medications ]
+    Immunizations
+        # Vaccinations
+            [ child | adult ]
+        # Status
+            [ by vaccination | by disease ]
+        # Record :target if landscape
+            - table of dates/immunizations
+        # Profile 
+            { first, last, birth, gender, location, number, doctor, (delete) }
+    Medications
+        [ details | schedule | history ]
+        details
+            { image, name, type }
+        schedule
+            { image, name, schedule }
+            ( send list to [doctor, etc] )
+        history
+          { image, name, dose }
+          status: [ taken, due, skipped ]
+          how you felt: [ worse, same, better ]
 
-* medication details
-( back to edit med )
-  { image, type, color }
-
-* dose details
-( back to due today )
-  { image, name, dose }
-  status: [ taken, due, skipped ]
-  how you felt: [ worse, same, better ]
-
-* Medications
-# [ details | schedule | history ]
-carousel: { image, name, schedule }
-( send list to [doctor, etc] )
-
-* Patient
-- list of patients ( multiple accounts ) ( details )
-  { doctors, surgery history, etc }
-
-* Settings
-- alarm volume
-- reminder/snooze frequency (1min, 10, 30, 60)
-- accessibility: language/contrast/color/font size
-
-Splash/Home/Landing/Base
-- ( nav )
-- ( notifications )
-- news
-- I ( my records )
-- II ( outbreaks )
-- III ( information )
-- IV ( search )
-
-nav (sliding left on phone)
-* menu *
-- ( help )
-- ( password )
-- ( privacy and security )
-- ( about )
-- ( feedback )
-* share *
-- ( facebook )
-- ( twitter )
-* *
-- ( report a bug )
-
-notifications
-- list of alerts/notifications
-
-news
-- carousel of news item: { image, title, url }
-  
- I My Records
-- create new record
-  { first, last, birth, gender, location, number, doctor }
-- record details
--- ( vaccinations )
--- ( status )
--- ( record )
--- ( profile )
-
-Vaccinations
-[ child | adult ]
-- list of vaccines ( details )
-
-Status
-[ by vaccination | by disease ]
-- list of vaccination status:
-" <name> still needs to get his flu shot this year"
-- list of diseases ( details )
-
-Record *activates on landscape rotate too*
-- table of dates/immunizations
-
-Profile
-{ first, last, birth, gender, location, number, doctor, (delete) }
-
-II Outbreaks
+# Outbreaks
   { location, proximity, filter by disease } ( list )
 - list of outbreaks
   { kind, location, date, proximity } ( map )
 - map of outbreak
   { kind, location, date, proximity, ( source ), ( my status ), ( more info ), map }
 
-III Information
+
+# Information
 - ( faq )
 - ( travel vaccinations )
 - ( how to protect yourself and... )
@@ -114,7 +57,7 @@ III Information
 - ( vaccine fact sheets )
 - ( provincial vaccination schedules )
 
-IV Search
+# Search
  { query }
 - list of example (recent?) queries ( details )
 </pre>
