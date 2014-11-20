@@ -59,8 +59,8 @@
           <ul class="nav nav-sidebar">
 		
             <li ><a href="#">Overview </a></li>
-            <li ><a href="#">My Cases </a></li>
-            <li class="active"><a href="#">Children <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="#">My Cases </a></li>
+            <li ><a href="#">Children </a></li>
             <li><a href="#">Dashboard</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -90,7 +90,8 @@
 			  <b>Race:</b> Hispanic/Latino<br />
 			  <b>School:</b> Lincoln High School<br />
 			 <b>Placement:</b> Jones Family<br />
-			 <b>Open Cases:</b> 1<br /></p>
+			 
+			 
             </div>
             <div class="col-xs-6 col-sm-4 ">
         <ul class="nav ">   
@@ -104,8 +105,13 @@
            
           </div>
 
-          <h2 class="sub-header">Home Visit</h2>
-		  <p>The following may be addressed, as age appropriate, with the child(ren) at least monthly during the worker visit.  </p>
+          <ul class="nav nav-tabs">
+  <li role="presentation" ><a href="childdetails.html">Case History</a></li>
+  <li role="presentation" class="active"><a href="homevisit.html">Home Visit <span class="label label-info">scheduled</span></a></li>
+  <li role="presentation"><a href="#">Child Visit <span class="label label-danger">overdue</span></a></li>
+</ul>
+<div class="tabContent">
+		  <p><b>The following may be addressed, as age appropriate, with the child(ren) at least monthly during the worker visit.</b>  </p>
 		  <form>
 		  <div class="checkbox">
 		  <label><input type="checkbox">Discuss the child's feelings of safety in the placement and note any safety concerns.  Assess the child's risk in the placement.  Note concerns about any household members' behaviors/interactions based on worker observation or as discussed with the provider.  Observed safety concerns should be immediately discussed with the provider and then discussed with the supervisor and licensing worker.</label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
@@ -116,12 +122,51 @@
 			
 			<div class="checkbox">  <label> <input type="checkbox">Discuss child's loss and grief issues. </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
 			<div class="checkbox">  <label> <input type="checkbox">Discuss child's adjustment and performance at school or daycare if applicable.  </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
-			
+			<p>Additional comments and items for remediation:</p>
+			<div class="form-group"><textarea class="form-control" placeholder="Additional comments"></textarea> </div>
+		  </form>
+		  <hr/>
+		      <form class=" form-horizontal">
+			   <p><b>Please complete the following section when the home visit has been conducted. </b></p>
+			   
+		 <div class="row">
+		         <div class="col-xs-3">
+		    <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-3">Case Worker</label>
+        <div class="col-xs-3">
+            <p class="form-control-static">susan.caseworker<br/><a href="#">update</a></p>
+        </div>
+    </div>
+	</div>  <div class="col-xs-3">
+	 <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-4">Location</label>
+        <div class="col-xs-8">
+            <p class="form-control-static">4208 Wallace Lane<br/>Harpers, TX 22203<br/><a href="#">update</a> | <a href="#">map</a></p>
+        </div>
+    </div> 
+	</div>  <div class="col-xs-6">
+	<div class="form-group">
+
+            <label class="control-label col-xs-4">Walk through of the home completed </label>
+            <div class="col-xs-2">
+                <label class="radio-inline">
+                    <input type="radio" name="genderRadios" value="male"> Yes
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <label class="radio-inline">
+                    <input type="radio" name="genderRadios" value="female"> No
+                </label>
+            </div>
+        </div></div></div>
+		 
+		
 		  </form>
           <form class="form-inline">
+		
 		  
 		 <div class="form-group">
-            <label class="control-label " for="Date">Date:</label>
+            <label class="control-label " for="Date">Visit Date:</label>
             <div >
                 <input type="date" class="form-control" id="Date" placeholder="Date">
             </div>
@@ -139,21 +184,27 @@
             </div>
         </div>
 		<div class="form-group">
-            <label class="control-label " for="ZipCode">Case Worker:</label>
+            <label class="control-label" for="ZipCode">Next Scheduled Visit:</label>
             <div class="">
-               <p class="form-control-static">candace.caseworker</p>
+                <input type="date" class="form-control" id="Date" placeholder="Length">
             </div>
         </div>
-		  </form>
-		      <form class="form-inline">
-		  
-		 <div class="form-group">
-            <label ><input type="checkbox" class="form-control" id="Date" placeholder="Date"> Walk through of the home</label>
-            
+		<div class="form-group">
+            <label class="control-label " for="ZipCode">Time:</label>
+            <div >
+                <input type="time" class="form-control" id="Date" placeholder="Time">
+            </div>
         </div>
 		
 		  </form>
+		  <br>
+		 <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <input type="submit" class="btn btn-primary" value="Complete Home Visit">
+                <input type="reset" class="btn btn-default" value="Send to Remediation">
+            </div>
         </div>
+        </div></div>
       </div>
     </div>
 
