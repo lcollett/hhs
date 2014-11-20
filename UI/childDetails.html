@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Child Details</title>
 
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -86,15 +86,15 @@
               <span class="text-muted">UTAE0341422</span>
             </div>
             <div class="col-xs-6 col-sm-4 ">
-             <p> <b>Birthdate:</b> May 03, 1998<br />
+             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
 			  <b>Race:</b> Hispanic/Latino<br />
 			  <b>School:</b> Lincoln High School<br />
 			 <b>Placement:</b> Jones Family<br />
-			 <b>Open Cases:</b> 1<br /></p>
+			 
             </div>
             <div class="col-xs-6 col-sm-4 ">
         <ul class="nav">   
-<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment <span class="label label-danger">overdue</span></a></li>
+<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
 <li> <a href="#"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Home Visit </a></li>
 <li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Report Abuse</a></li>
 <li> <a href="#"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Request Relocation </a></li>
@@ -104,47 +104,63 @@
            
           </div>
 
-          <h2 class="sub-header">Case History</h2>
+           <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="childDetails.html">Case History <span class="badge">1</span></a></li>
+  <li role="presentation" ><a href="homeVisit.html">Home Visit <span class="label label-info">scheduled</span></a></li>
+  <li role="presentation"><a href="#">Child Visit <span class="label label-danger">overdue</span></a></li>
+</ul>
+<div class="tabContent">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th>Status</th>
 				  <th>Date</th>
                   <th>Type</th>
-                  
-                  <th>Status</th>
+                                 
 				  <th>Notes</th>
+				  <th></th>
                   
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>3422</td>
-				  <td>09/12/14</td>
-                  <td>Relocation</td>
-                 
-                  <td>Closed</td>
-                  <td>Relocated to South Hill.</td>
+			  <tr>
+                 <td>Open</td>
+				  <td>11/22/14</td>
+                  <td>Home Visit</td>
+                             
+                  <td></td>
+				  <td><a href="homevisit.html">Conduct</a></td>
                 </tr>
                 <tr>
-                  <td>3155</td>
+                 <td>Closed</td>
+				  <td>09/12/14</td>
+                  <td>Relocation</td>
+                             
+                  <td>Relocated to South Hill.</td>
+				  <td><a href="#">Details</a></td>
+                </tr>
+                <tr>
+                   <td>Pending</td>
                   <td>09/01/14</td>
                   <td>Child Abuse</td>
                   
-                  <td>Pending</td>
+                 
 				  <td>School provided visual proof.</td>
+				    <td><a href="#">Details</a></td>
                 </tr>
                 <tr>
-                  <td>4433</td>
+                 <td>Closed</td>
                   <td>07/04/09</td>
                   <td>Placement</td>
-                  <td>Closed</td>
+                  
                   <td>Jerry came into the State's care after...</td>
+				    <td><a href="#">Details</a></td>
                 </tr>
                
               </tbody>
             </table>
+			</div>
           </div>
         </div>
       </div>
