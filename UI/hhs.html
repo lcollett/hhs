@@ -30,15 +30,14 @@
 			$('.' +id).show();
 
 	   }
-	   function myCases(){
-			$('.mycases').show();
-			$('.childdetails').hide();
+	   function showMain(id){
+	   $('.nav-sidebar li').removeClass("active");
+	   $('#'+id).addClass("active");
+			$('.main').hide();
+			$('.'+id).show();
+			debugger;
+	   }
 	   
-	   }
-	   function childDetails(){
-			$('.mycases').hide();
-			$('.childdetails').show();
-	   }
 	</script>
 	
   </head>
@@ -79,15 +78,15 @@
           <ul class="nav nav-sidebar">
 		
             <li ><a href="#">Overview </a></li>
-            <li class="active" onclick="myCases();"><a href="#">My Cases </a></li>
+            <li class="active" onclick="showMain('mycases');"><a href="#">My Cases </a></li>
             <li ><a href="#">Children</a></li>
             <li><a href="#">Documents</a></li>
           </ul>
            <ul class="nav nav-sidebar">
             <li><a href="">Dashboard</a></li>
-            <li><a href="">Reports</a></li>
-            <li><a href="">Regulations</a></li>
-            <li><a href="">Contacts</a></li>
+            <li onclick="showMain('reports');" id="reports"><a href="#">Reports</a></li>
+            <li onclick="showMain('regulations');" id="regulations"><a href="#">Regulations</a></li>
+            <li onclick="showMain('contacts');" id="contacts"><a href="#">Contacts</a></li>
       
           </ul>
           <ul class="nav nav-sidebar">
@@ -98,7 +97,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases">
           <table class="table table-hover list">
-			<tr onclick="childDetails();"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
+			<tr onclick="showMain('childdetails');"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
 			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha</td><td>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
 			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles</td><td>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
 		  </table>
@@ -287,7 +286,16 @@
         </div>
         </div>
       </div>
-      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main reports" style="display:none;">
+		Case Analytics
+	  </div>
+	  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main regulations" style="display:none;">
+		Regulation information (html)
+	  </div>
+	  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main contacts" style="display:none;">
+		Important Hotline Numbers and addresses
+	  </div>
+	  </div>
   
 
     <!-- Bootstrap core JavaScript
