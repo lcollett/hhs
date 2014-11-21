@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>My Cases</title>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script type="text/javascript">
+	   function showDetails(id){
+			$('.nav-tabs li').removeClass("active");
+			$('#'+id).addClass("active");
+			$('.tabContent').hide();
+			$('.' +id).show();
+
+	   }
+	   function myCases(){
+			$('.mycases').show();
+			$('.childdetails').hide();
+	   
+	   }
+	   function childDetails(){
+			$('.mycases').hide();
+			$('.childdetails').show();
+	   }
+	</script>
+	
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <!-- <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> -->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+		  <form class="">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+          <ul class="nav nav-sidebar">
+		
+            <li ><a href="#">Overview </a></li>
+            <li class="active" onclick="myCases();"><a href="#">My Cases </a></li>
+            <li ><a href="#">Children</a></li>
+            <li><a href="#">Documents</a></li>
+          </ul>
+           <ul class="nav nav-sidebar">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Reports</a></li>
+            <li><a href="">Regulations</a></li>
+            <li><a href="">Contacts</a></li>
+      
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">About</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases">
+          <table class="table table-hover list">
+			<tr onclick="childDetails();"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
+			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha</td><td>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
+			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles</td><td>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
+		  </table>
+        </div>
+		 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main childdetails" style="display:none;">
+          <h1 class="page-header">Sanchez, Jerry</h1>
+
+          <div class="row ">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Jerry Sanchez, 16</h4>
+              <span class="text-muted">UTAE0341422</span>
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
+			  <b>Race:</b> Hispanic/Latino<br />
+			  <b>School:</b> Lincoln High School<br />
+			 <b>Placement:</b> Jones Family<br />
+			 
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+        <ul class="nav">   
+			<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Home Visit </a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Report Abuse</a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Request Relocation </a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-briefcase" aria-hidden="true"></span> Request Medication </a></li>
+			 </ul>
+            </div>
+           
+          </div>
+
+           <ul class="nav nav-tabs">
+			  <li role="presentation" class="active" onclick=" showDetails(this.id);" id="casehistory" ><a href="#" >Case History <span class="badge">1</span></a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="homevisit" ><a href="#" >Home Visit <span class="label label-info">scheduled</span></a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="childvisit"><a href="#">Child Visit <span class="label label-danger">overdue</span></a></li>
+			</ul>
+	<div class="tabContent casehistory">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Status</th>
+				  <th>Date</th>
+                  <th>Type</th>
+                                 
+				  <th>Notes</th>
+				  <th></th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+			  <tr>
+                 <td>Open</td>
+				  <td>11/22/14</td>
+                  <td>Home Visit</td>
+                             
+                  <td></td>
+				  <td><a href="#" onclick=" showDetails('homevisit');">Conduct</a></td>
+                </tr>
+                <tr>
+                 <td>Closed</td>
+				  <td>09/12/14</td>
+                  <td>Relocation</td>
+                             
+                  <td>Relocated to South Hill.</td>
+				  <td><a href="#">Details</a></td>
+                </tr>
+                <tr>
+                   <td>Pending</td>
+                  <td>09/01/14</td>
+                  <td>Child Abuse</td>
+                  
+                 
+				  <td>School provided visual proof.</td>
+				    <td><a href="#">Details</a></td>
+                </tr>
+                <tr>
+                 <td>Closed</td>
+                  <td>07/04/09</td>
+                  <td>Placement</td>
+                  
+                  <td>Jerry came into the State's care after...</td>
+				    <td><a href="#">Details</a></td>
+                </tr>
+               
+              </tbody>
+            </table>
+			</div>
+          </div>
+		  
+		 <div class="tabContent homevisit" style="display:none">
+		  <p><b>The following may be addressed, as age appropriate, with the child(ren) at least monthly during the worker visit.</b>  </p>
+		  <form>
+		  <div class="checkbox">
+		  <label><input type="checkbox">Discuss the child's feelings of safety in the placement and note any safety concerns.  Assess the child's risk in the placement.  Note concerns about any household members' behaviors/interactions based on worker observation or as discussed with the provider.  Observed safety concerns should be immediately discussed with the provider and then discussed with the supervisor and licensing worker.</label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+		  
+		  <div class="checkbox">  <label> <input type="checkbox">Assess if the child has any feelings of guilt or blame for events which occurred or caused separation from family. Discuss with the child as needed and appropriate. </label></div>
+		  <div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's adjustment to current placement as well as interactions with other family members.  Note changes in household composition or structure. </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div> 
+			
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's loss and grief issues. </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			<div class="checkbox">  <label> <input type="checkbox">Discuss child's adjustment and performance at school or daycare if applicable.  </label></div><div class="form-group"><textarea class="form-control" placeholder="Please provide comments"></textarea> </div>
+			<p>Additional comments and items for remediation:</p>
+			<div class="form-group"><textarea class="form-control" placeholder="Additional comments"></textarea> </div>
+		  </form>
+		  <hr/>
+		      <form class=" form-horizontal">
+			   <p><b>Please complete the following section when the home visit has been conducted. </b></p>
+			   
+		 <div class="row">
+		         <div class="col-xs-3">
+		    <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-3">Case Worker</label>
+        <div class="col-xs-3">
+            <p class="form-control-static">susan.caseworker<br/><a href="#">update</a></p>
+        </div>
+    </div>
+	</div>  <div class="col-xs-3">
+	 <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-4">Location</label>
+        <div class="col-xs-8">
+            <p class="form-control-static">4208 Wallace Lane<br/>Harpers, TX 22203<br/><a href="#">update</a> | <a href="#">map</a></p>
+        </div>
+    </div> 
+	</div>  <div class="col-xs-6">
+	<div class="form-group">
+
+            <label class="control-label col-xs-4">Walk through of the home completed </label>
+            <div class="col-xs-2">
+                <label class="radio-inline">
+                    <input type="radio" name="genderRadios" value="male"> Yes
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <label class="radio-inline">
+                    <input type="radio" name="genderRadios" value="female"> No
+                </label>
+            </div>
+        </div></div></div>
+		 
+		
+		  </form>
+          <form class="form-inline">
+		
+		  
+		 <div class="form-group">
+            <label class="control-label " for="Date">Visit Date:</label>
+            <div >
+                <input type="date" class="form-control" id="Date" placeholder="Date">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label " for="ZipCode">Time:</label>
+            <div >
+                <input type="time" class="form-control" id="Date" placeholder="Time">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label" for="ZipCode">Length:</label>
+            <div class="">
+                <input type="number" class="form-control" id="Date" placeholder="Length">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label" for="ZipCode">Next Scheduled Visit:</label>
+            <div class="">
+                <input type="date" class="form-control" id="Date" placeholder="Length">
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="control-label " for="ZipCode">Time:</label>
+            <div >
+                <input type="time" class="form-control" id="Date" placeholder="Time">
+            </div>
+        </div>
+		
+		  </form>
+		  <br>
+		 <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <input type="submit" class="btn btn-primary" value="Complete Home Visit">
+                <input type="reset" class="btn btn-default" value="Send to Remediation">
+            </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
