@@ -1,89 +1,160 @@
 <!DOCTYPE html>
-<meta charset=UTF-8>
-<title> MediTrack Features </title>
+<meta charset=utf-8>
+<title> MediTrack Specification </title>
+<link rel=stylesheet href=screen.css>
 
-<style>
-    [contenteditable] { font:100%/1.6 HelveticaNeue-Regular,Segoe UI Semilight,sans-serif }
-    [title]:before { content:attr(title)' 'attr(class); text-transform:uppercase;
-        font:1rem HelveticaNeue-Thin,Segoe UI Semibold,Roboto Thin,sans-serif}
-    [contenteditable]:not(.draft) ~ #discard { opacity:0; z-index:-1 }
-</style>
+<nav>
+  <a href=#overview>Overview</a>
+  <a href=#roles>Roles</a>
+  <a href=#flows>Flows</a>
+  <a href=#screens>Screens</a>
+  <a href=#palette>Palette</a>
+  <a href=#data-structures>Data Structures</a>
+</nav>
 
-<pre contenteditable title="MediTrack Features">
+<section id=overview>
+The Meditrack app is an amalgamation of the Immunize Canada app, with the ability to track medications too.
+</section>
 
-main Story
-    User commits to getting a ( flu Vaccine ),
-         searches for (flu warnings, nearby or pick location),
-         checks for (side effects) given ( Medications )
+<section id=roles>
+  <article title="Rebecca">
+    Rebecca is a mom with a newborn. She wants to keep a record of vaccinations and check if they are all up to date.
+  </article>
+  <article title="Carlton">
+    Carlton is a high executive at a multi-million dollar company. He frequently travels to other countries in Asia, Africa and the Pacific. He wants to know which immunizations are recommended or necessary whenever a trip comes up.
+  </article>
+  <article title="Ray">
+    Ray takes many medications and supplements every week. He needs to keep track of them and be able to send a list to his doctor.
+  </article>
+</section>
 
-# News feature { image, title, url }
-# My Record
-# Outbreaks
-# News
-# Search
+<section id=flows>
+  <article title="Rebecca tracks vaccines for Huxley">
+    <section title="Add a new Record"></section>
+    <section title="Check Record Notifications"></section>
+    <section title="Review Upcoming Vaccinations"></section>
+  </article>
+  
+  <article title="Carlton gets immunizations for travel">
+    <section title="See outbreaks for destination"></section>
+    <section title="See immunization recommendations for destination"></section>
+  </article>
+  
+  <article title="Ray tracks 25 medications every week">
+    <section title="Add a new Medication"></section>
+    <section title="Check Schedule for Today"></section>
+    <section title="Send Last Month History to Doctor"></section>
+  </article>
+</section>
 
-# My Records
-    new Record { first, last, birth, gender, location, number, doctor }
-    ( Record )
-        [ Immunizations | Medications ]
-        Immunizations
-            # Vaccinations
-                [ child | adult ]
-            # Status
-                [ by vaccination | by disease ]
-            # Record :target if landscape
-                - table of dates/immunizations
-            # Profile 
-                { first, last, birth, gender, location, number, doctor, (delete) }
-        Medications
-            [ details | schedule | history ]
-            details
-                { image, name, type, warnings, etc }
-            schedule
-                { image, name, prescribed date, dose, schedule }
-                ( send list to [doctor, etc] )
-                ( request refill )
+<section id=screens>
+  <figure title=home></figure>
+  <figure title=menu></figure>
+  
+  <figure title="List of Records">
+    <figcaption>
+      List of <a href=#vaccinations>Records</a>
+    </figcaption>
+  </figure>
+  <figure title="New Record">
+    <figcaption>
+      Add a new <a href=#vaccinations>Record</a>
+    </figcaption>
+  </figure>
+  <figure title="Record: Vaccinations">
+    <figcaption>
+      List of <a href=#vaccinations>vaccinations</a>
+    </figcaption>
+  </figure>
+  <figure title="Record: Status">
+    <figcaption>
+      Status of current and due <a href=#vaccinations>vaccinations</a>
+    </figcaption>
+  </figure>
+  <figure title="Record: Table">
+    <figcaption>
+      Table of <a href=#vaccinations>Vaccination</a> History
+    </figcaption>
+  </figure>
+  <figure title="Record: Profile">
+    <figcaption>
+      <a href=#vaccinations>Record</a> form
+    </figcaption>
+  </figure>
+  
+  <figure title="List of Outbreaks">
+    <figcaption>
+      List of <a href=#outbreaks>outbreaks</a> by proximity and kind
+    </figcaption>
+  </figure>
+  
+  <figure title="Map of Outbreaks">
+    <figcaption>
+      Map of <a href=#outbreaks>outbreaks</a> by proximity and kind
+    </figcaption>
+  </figure>
+    
+  <figure title=information>
+    <figcaption>Links to Frequently Asked Questions,
+      Travel Vaccinations, Staying Healthy Tips, Further Readings,
+      Pain Management, Vaccine Fact Sheets, Vaccination Schedules by Region</figcaption>
+  </figure>
+    
+  <figure title=search>
+    <figcaption>
+        Input and list of recent and example queries
+    </figcaption>
+  </figure>
+</section>
 
-# Outbreaks
-  { location, proximity, filter by disease } ( list )
-- list of outbreaks
-  { kind, location, date, proximity } ( map )
-- map of outbreak
-  { kind, location, date, proximity, ( source ), ( my status ), ( more info ), map }
+<section id=palette>
+  Alta palette subset
+</section>
 
-
-# Information
-- ( faq )
-- ( travel vaccinations )
-- ( how to protect yourself and... )
-- ( further readings )
-- ( pain management )
-- ( vaccine fact sheets )
-- ( provincial vaccination schedules )
-
-# Search
- { query }
-- list of example (recent?) queries ( details )
+<pre id=data-structures>
+Record:
+  First Name
+  Last Name
+  Birthdate
+  Gender
+  State
+  City
+  Notifications:
+    - 
+  Doctor:
+    - Name
+      - URL # tel, mailto, http
+  Status: # history + upcoming
+    - Date
+      Time
+      Location
+      Type
+      Dose
+      
+Medicine:
+  Name
+  Short Name
+  Description
+  Used to Treat # condition type
+  Side Effects
+  Contraindications
+  Trials
+  Symptoms
+  Transmission
+  
+Condition:
+  Name
+  Type # injury, disability, disorder, syndrome, disease
+  Risk Factors
+  Symptoms
+  Treatments
+  Causes
+  Stages
+  Survival Rates
 </pre>
-
-<button id="discard"> Discard Draft </button>
-
-<script>(function(){
-    var content = document.querySelector('[contenteditable]');
-    // create/retrieve/update draft
-    with ( content )
-        localStorage[id] && (className = 'draft'),
-        innerHTML = localStorage[id] || innerHTML,
-        oninput = function(){ 
-            localStorage[id] = innerText;
-            className = 'draft' }
-    // delete draft
-    var discard = document.querySelector('#discard');
-    discard.onclick = function(){
-        localStorage.clear();
-        content.className = '';
-        location.reload() };
-        
-})()</script>
-
+<dl title="Legend">
+  <dt>: </dt><dd> A mapping
+  <dt>- </dt><dd> A collection (implies more than one entry)
+  <dt># </dt><dd> A comment
+</dl>
 
