@@ -8,12 +8,18 @@
   <a href=#roles>Roles</a>
   <a href=#flows>Flows</a>
   <a href=#screens>Screens</a>
-  <a href=#palette>Palette</a>
   <a href=#data-structures>Data Structures</a>
+  <a href=#design>Design</a>
 </nav>
 
 <section id=overview>
-The Meditrack app is an amalgamation of the Immunize Canada app, with the ability to track medications too.
+The Meditrack app is an amalgamation of the Immunize Canada app, with the ability to track medications too.<br>
+  
+Throughout this specification, the terms “Immunization” and “Vaccination” can be used interchangeably, and grouped with “Medication” and  “Medicine”.<br>
+
+Immunizations apply to infants and children, while vaccinations are for adults.<br>
+  
+Immunizations and Vaccinations are administered following a regional schedule, while Medication is prescribed by a doctor or taken as a dietary supplement. A Vaccination schedule is similar in concept to the medication schedule, but the Vaccination schedule cannot be added or modified through the user interface.
 </section>
 
 <section id=roles>
@@ -30,67 +36,108 @@ The Meditrack app is an amalgamation of the Immunize Canada app, with the abilit
 
 <section id=flows>
   <article title="Rebecca tracks vaccines for Huxley">
-    <section title="Add a new Record"></section>
-    <section title="Check Record Notifications"></section>
-    <section title="Review Upcoming Vaccinations"></section>
+    <section title="Add a new Record">
+      From the Records screen, Rebecca can add a new record for her newborn.
+      This screen will help determine which immunizations are necessary given the age
+      and recommended schedules for their region.
+    </section>
+    <section title="Check Record Notifications">
+      From the Record screen for Huxley, 
+      the Status tab shows  which vaccinations are overdue if any,
+      and which are coming by due date.
+    </section>
   </article>
   
   <article title="Carlton gets immunizations for travel">
-    <section title="See outbreaks for destination"></section>
-    <section title="See immunization recommendations for destination"></section>
+    <section title="See outbreaks for destination">
+      Under Outbreaks, using the map Carlton discovers current warnings
+      for the country or region he is visiting. 
+      Each outbreak marker has an impact radius and links to the disease details.
+    </section>
+    <section title="See immunization recommendations for destination">
+      Carlton types the location where he is headed, and a suggestion list
+      under the input suggests text completion that takes him to 
+      a list showing Carlton the diseases and links to the details.
+    </section>
   </article>
   
   <article title="Ray tracks 25 medications every week">
-    <section title="Add a new Medication"></section>
-    <section title="Check Schedule for Today"></section>
-    <section title="Send Last Month History to Doctor"></section>
+    <section title="Add a new Medication">
+      Ray can add a new medication by going to the Medications screen and
+      entering name, dosage and refill date.
+    </section>
+    <section title="Check Schedule for Today">
+      Ray can check which medications he should be taking today,
+      grouped by time of the day. Each medication can be ticked off
+      recording name, dosage time and maybe location.
+    </section>
+    <section title="Send Last Month History to Doctor">
+      A history screen shows a list of medications taken, where
+      Ray can email them to his doctor.
+    </section>
   </article>
 </section>
 
 <section id=screens>
-  <figure title=home></figure>
-  <figure title=menu></figure>
+  <figure title=home>
+    <figcaption>
+        From the home or landing screen, a user can access the rest of the features: Records, Outbreaks, Information and Search. These links are very large targets arranged as a 2x2 grid.
+    </figcaption>
+  </figure>
+  <figure title=menu>
+    <figcaption>
+        The sidebar menu is toggled via a "bars" icon on the top-left (primary facet) of every page header. The contents of the menu are direct links to lists of Records, Vaccinations and Medications.
+    </figcaption>
+  </figure>
   
   <figure title="List of Records">
     <figcaption>
-      List of <a href=#vaccinations>Records</a>
+      List of <a href=#data-structures>Records</a>, with “Add new Record” as a list item at the bottom.
     </figcaption>
   </figure>
   <figure title="New Record">
     <figcaption>
-      Add a new <a href=#vaccinations>Record</a>
+      Add a new <a href=#data-structures>Record</a> shows a form with the user profile.
     </figcaption>
   </figure>
   <figure title="Record: Vaccinations">
     <figcaption>
-      List of <a href=#vaccinations>vaccinations</a>
+      Alphabetical list of <a href=#data-structures>vaccinations</a> with their status, linked to details. At the top, a select-one component toggles content between vaccinations and medications.
+    </figcaption>
+  </figure>
+  <figure title="Record: Medications">
+    <figcaption>
+      Alphabetical list of <a href=#data-structures>medications</a> with their due dates, linked to details. A select-one component toggles between medications and vaccinations.
     </figcaption>
   </figure>
   <figure title="Record: Status">
     <figcaption>
-      Status of current and due <a href=#vaccinations>vaccinations</a>
+      Status of current and due <a href=#data-structures>vaccinations</a>. A select-one
+      component toggles status between vaccinations and medications.
     </figcaption>
   </figure>
   <figure title="Record: Table">
     <figcaption>
-      Table of <a href=#vaccinations>Vaccination</a> History
+      Table of <a href=#data-structures>Vaccination</a> and <a href=#data-structures>Medication</a> History
     </figcaption>
   </figure>
   <figure title="Record: Profile">
     <figcaption>
-      <a href=#vaccinations>Record</a> form
+      Editable <a href=#data-structures>Record</a> form, identical to the “New Record” screen.
     </figcaption>
   </figure>
   
   <figure title="List of Outbreaks">
     <figcaption>
-      List of <a href=#outbreaks>outbreaks</a> by proximity and kind
+      List of <a href=#data-structures>outbreaks</a> by proximity and kind, to details.
+      A search bar at the top reduces the list to matching substrings.
     </figcaption>
   </figure>
   
   <figure title="Map of Outbreaks">
     <figcaption>
-      Map of <a href=#outbreaks>outbreaks</a> by proximity and kind
+      Map of <a href=#data-structures>outbreaks</a> by proximity and kind, to details.
+      A search bar suggests locations from current outbreak regions.
     </figcaption>
   </figure>
     
@@ -102,13 +149,15 @@ The Meditrack app is an amalgamation of the Immunize Canada app, with the abilit
     
   <figure title=search>
     <figcaption>
-        Input and list of recent and example queries
+        Input and list of recent and example queries, link to details.
     </figcaption>
   </figure>
-</section>
-
-<section id=palette>
-  Alta palette subset
+    
+  <figure title=about>
+    <figcaption>
+        Content provided at a later date in HTML.
+    </figcaption>
+  </figure>
 </section>
 
 <pre id=data-structures>
@@ -120,41 +169,40 @@ Record:
   State
   City
   Notifications:
-    - 
+    - Due
+      Name
   Doctor:
     - Name
       - URL # tel, mailto, http
   Status: # history + upcoming
-    - Date
+    - Name
+      Type
+      Date
       Time
       Location
-      Type
       Dose
       
 Medicine:
   Name
   Short Name
+  Type # vaccination, medication
   Description
-  Used to Treat # condition type
-  Side Effects
-  Contraindications
-  Trials
-  Symptoms
-  Transmission
+  Dose
+  Refill Date
   
-Condition:
-  Name
-  Type # injury, disability, disorder, syndrome, disease
-  Risk Factors
-  Symptoms
-  Treatments
-  Causes
-  Stages
-  Survival Rates
+Outbreak:
+  Type
+  Location
+  Date
+  Source
 </pre>
+
 <dl title="Legend">
   <dt>: </dt><dd> A mapping
   <dt>- </dt><dd> A collection (implies more than one entry)
   <dt># </dt><dd> A comment
 </dl>
 
+<section id=design>
+  Details about visual design will be provided at a later date. These will include a color palette from the Alta skin, app icon, device splash screens, font and font icon specifications, typography and vertical rhythm and general usability guidelines.
+</section>
