@@ -3,6 +3,10 @@
 <title> MediTrack Specification </title>
 <link rel=stylesheet href=screen.css>
 
+<h1> MediTrack Specification </h1>
+
+<aside>Draft — Nov 24, 2014</aside>
+
 <nav>
   <a href=#overview>Overview</a>
   <a href=#roles>Roles</a>
@@ -13,13 +17,13 @@
 </nav>
 
 <section id=overview>
-The Meditrack app is an amalgamation of the Immunize Canada app, with the ability to track medications too.<br>
+  <p>The MediTrack app is an amalgamation of the Immunize Canada app <a href=#reference>[1]</a>, with the ability to track medications too.
   
-Throughout this specification, the terms “Immunization” and “Vaccination” can be used interchangeably, and grouped with “Medication” and  “Medicine”.<br>
+<p>Throughout this specification, the terms “Immunization” and “Vaccination” can be used interchangeably, and grouped with “Medication” and  “Medicine”.
 
-Immunizations apply to infants and children, while vaccinations are for adults.<br>
+<p>Immunizations apply to infants and children, while vaccinations are for adults.
   
-Immunizations and Vaccinations are administered following a regional schedule, while Medication is prescribed by a doctor or taken as a dietary supplement. A Vaccination schedule is similar in concept to the medication schedule, but the Vaccination schedule cannot be added or modified through the user interface.
+<p>Immunizations and Vaccinations are administered following a regional schedule, while Medication is prescribed by a doctor or taken as a dietary supplement. A Vaccination schedule is similar in concept to the medication schedule, but the Vaccination schedule cannot be added or modified through the user interface.
 </section>
 
 <section id=roles>
@@ -79,9 +83,13 @@ Immunizations and Vaccinations are administered following a regional schedule, w
 </section>
 
 <section id=screens>
+  <p>Following screens are to be used as a guideline while using standard MAF components for look-and-feel.
+    
   <figure title=home>
+    <img src="img/immunize%20splash.jpeg" alt="Splash screen">
     <figcaption>
-        From the home or landing screen, a user can access the rest of the features: Records, Outbreaks, Information and Search. These links are very large targets arranged as a 2x2 grid.
+        From the home or landing screen, a user can access the rest of the features: Records, Outbreaks, Information and Search. These links are very large targets arranged as a 2x2 grid.<br>
+      This screen will change significantly, use only as a guideline.
     </figcaption>
   </figure>
   <figure title=menu>
@@ -101,8 +109,17 @@ Immunizations and Vaccinations are administered following a regional schedule, w
     </figcaption>
   </figure>
   <figure title="Record: Vaccinations">
+    <img src="img/vacmeds.jpg" alt="Child Vaccinations, with toggle">
     <figcaption>
-      Alphabetical list of <a href=#data-structures>vaccinations</a> with their status, linked to details. At the top, a select-one component toggles content between vaccinations and medications.
+      If the record corresponds to a child, shows a list grouped by due date (two month, grade 6 visit).
+      Otherwise, an alphabetical list of <a href=#data-structures>vaccinations</a> with their status, linked to details. At the top, a select-one component toggles content between vaccinations and medications.
+    </figcaption>
+  </figure>
+  <figure title="Record: Visit Details">
+    <img src="img/immunize%20visit%20details.jpeg" alt="Child Visit Details">
+    <figcaption>
+      If the record corresponds to a child, shows a list grouped by due date (two month, grade 6 visit).
+      Otherwise, an alphabetical list of <a href=#data-structures>vaccinations</a> with their status, linked to details. At the top, a select-one component toggles content between vaccinations and medications.
     </figcaption>
   </figure>
   <figure title="Record: Medications">
@@ -116,7 +133,8 @@ Immunizations and Vaccinations are administered following a regional schedule, w
       component toggles status between vaccinations and medications.
     </figcaption>
   </figure>
-  <figure title="Record: Table">
+  <figure title="Record: History">
+    <img src="img/immunize%20table.jpeg" alt="Immunizations Table">
     <figcaption>
       Table of <a href=#data-structures>Vaccination</a> and <a href=#data-structures>Medication</a> History
     </figcaption>
@@ -206,3 +224,7 @@ Outbreak:
 <section id=design>
   Details about visual design will be provided at a later date. These will include a color palette from the Alta skin, app icon, device splash screens, font and font icon specifications, typography and vertical rhythm and general usability guidelines.
 </section>
+
+<aside id="reference">
+  For reference, the Immunize Canada application can be <a href="https://itunes.apple.com/ca/app/immunize-canada/id574951915">found on the App Store on iTunes</a> and the <a href="https://play.google.com/store/apps/details?id=ca.ohri.immunizeapp">Google Play Store</a>
+</aside>
