@@ -77,13 +77,13 @@
           </form>
           <ul class="nav nav-sidebar">
 		
-            <li ><a href="#">Overview </a></li>
+            <li onclick="showMain('mycases');"><a href="#">Dashboard </a></li>
             <li class="active" onclick="showMain('mycases');"><a href="#">My Cases </a></li>
-            <li ><a href="#">Children</a></li>
+            <li ><a href="#">Clients</a></li>
             <li><a href="#">Documents</a></li>
           </ul>
            <ul class="nav nav-sidebar">
-            <li><a href="">Dashboard</a></li>
+            
             <li onclick="showMain('reports');" id="reports"><a href="#">Reports</a></li>
             <li onclick="showMain('regulations');" id="regulations"><a href="#">Regulations</a></li>
             <li onclick="showMain('contacts');" id="contacts"><a href="#">Contacts</a></li>
@@ -97,7 +97,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases">
           <table class="table table-hover list">
-			<tr onclick="showMain('childdetails');showDetails('homevisit');"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
+			<tr onclick="showMain('homevisit');showDetails('fv1');"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
 			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha</td><td>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
 			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles</td><td>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
 		  </table>
@@ -131,11 +131,31 @@
           </div>
 
            <ul class="nav nav-tabs">
-			  <li role="presentation" class="active" onclick=" showDetails(this.id);" id="casehistory" ><a href="#" >Case History <span class="badge">1</span></a></li>
-			  <li role="presentation" onclick="showDetails(this.id);" id="homevisit" ><a href="#" >Home Visit <span class="label label-info">scheduled</span></a></li>
-			  <li role="presentation" onclick="showDetails(this.id);" id="childvisit"><a href="#">Child Visit <span class="label label-danger">overdue</span></a></li>
+		   <li role="presentation" onclick="showDetails(this.id);" id="summary"><a href="#">Summary </a></li>
+		   <li role="presentation" onclick="showDetails(this.id);" id="demographics"><a href="#">Demographics </a></li>
+		   <li role="presentation" onclick="showDetails(this.id);" id="family"><a href="#">Family </a></li>
+		     <li role="presentation" onclick="showDetails(this.id);" id="family"><a href="#">Treatment Plan </a></li>
+		<li role="presentation" class="active" onclick=" showDetails(this.id);" id="casehistory" ><a href="#" >Case History <span class="badge">1</span></a></li>  
 			</ul>
-	<div class="tabContent casehistory">
+			<div class="tabContent  summary" style="display:none">
+			<ul class="nav">   
+			<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
+			<li> <a href="#" onclick="showMain('homevisit');showDetails('fv1');"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Family Visit </a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Conduct Child Visit</a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Home Inspection</a></li>
+			<li> <a href="#"><span class=" glyphicon glyphicon-briefcase" aria-hidden="true"></span> Request Medication </a></li>
+			 </ul>
+			</div>
+			<div class="tabContent demographics" style="display:none">
+			
+			</div>
+			<div class="tabContent family " style="display:none">
+			
+			</div>
+			<div class="tabContent treatment " style="display:none">
+			
+			</div>
+	<div class="tabContent casehistory" style="display:none">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -188,8 +208,20 @@
             </table>
 			</div>
           </div>
-		  
-		 <div class="tabContent homevisit" style="display:none">
+		 
+        </div>
+        </div>
+      </div>
+	  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main homevisit" style="display:none;">
+          <h1 class="page-header">Family Visit: <a href="#" onclick="showMain('childdetails');showDetails('summary');">Sanchez, Jerry</a></h1>
+
+           <ul class="nav nav-tabs">	  		  
+			  <li role="presentation" onclick="showDetails(this.id);" id="fv1" ><a href="#" >General</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="fv2" ><a href="#" >Remediation</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="fv3"><a href="#">Confirmation </a></li>		  
+			</ul>
+	
+		  <div class="tabContent fv1" style="display:none">
 		  <p><b>The following may be addressed, as age appropriate, with the child(ren) at least monthly during the worker visit.</b>  </p>
 		  <form>
 		  <div class="checkbox">
@@ -204,8 +236,14 @@
 			<p>Additional comments and items for remediation:</p>
 			<div class="form-group"><textarea class="form-control" placeholder="Additional comments"></textarea> </div>
 		  </form>
-		  <hr/>
-		      <form class=" form-horizontal">
+		  </div>
+		 <div class="tabContent fv2" style="display:none">
+		 
+		  Take a picture of bedroom and upload with comments
+		      
+        </div>
+		<div class="tabContent fv3" style="display:none">
+		<form class=" form-horizontal">
 			   <p><b>Please complete the following section when the home visit has been conducted. </b></p>
 			   
 		 <div class="row">
@@ -283,11 +321,95 @@
                 <input type="reset" class="btn btn-default" value="Send to Remediation">
             </div>
         </div>
+		</div>
         </div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main childvisitmain" style="display:none;">
+          <h1 class="page-header">Child Visit: Sanchez, Jerry</h1>
+
+          <div class="row ">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Jerry Sanchez, 16</h4>
+              <span class="text-muted">UTAE0341422</span>
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
+			  <b>Race:</b> Hispanic/Latino<br />
+			  <b>School:</b> Lincoln High School<br />
+			 <b>Placement:</b> Jones Family<br />
+			 
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+        <ul class="nav">   
+			
+			 </ul>
+            </div>
+           
+          </div>
+
+           <ul class="nav nav-tabs">
+		  		  
+			  <li role="presentation" onclick="showDetails(this.id);" id="cv1" ><a href="#" >CV Step 1</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="cv2" ><a href="#" >CV Step 2</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="cv3"><a href="#">CV Step 3 </a></li>
+			  
+			  
+			</ul>
+	
+		  <div class="tabContent cv1" style="display:none">
+		  Child Visit Form Part 1
+		  </div>
+		 <div class="tabContent cv2" style="display:none">
+		  Child Visit Form Part 1
         </div>
-      </div>
+		<div class="tabContent cv3" style="display:none">
+		  Child Visit Form Part 1
+        </div>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main homeinspectionmain" style="display:none;">
+          <h1 class="page-header">Home Inspection: Sanchez, Jerry</h1>
+
+          <div class="row ">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Jerry Sanchez, 16</h4>
+              <span class="text-muted">UTAE0341422</span>
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
+			  <b>Race:</b> Hispanic/Latino<br />
+			  <b>School:</b> Lincoln High School<br />
+			 <b>Placement:</b> Jones Family<br />
+			 
+            </div>
+            <div class="col-xs-6 col-sm-4 ">
+        <ul class="nav">   
+			
+			 </ul>
+            </div>
+           
+          </div>
+
+           <ul class="nav nav-tabs">
+		  		  
+			  <li role="presentation" onclick="showDetails(this.id);" id="hi1" ><a href="#" >Step 1</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="hi2" ><a href="#" >Step 2</a></li>
+			  <li role="presentation" onclick="showDetails(this.id);" id="hi3"><a href="#">Step 3</a></li>
+			  
+			  
+			</ul>
+	
+		  <div class="tabContent hi1" style="display:none">
+		  Take a picture of child's room, add visual sliders/indicators, create an assessment score. Meets, Partially, Does not Meet. 
+		  </div>
+		 <div class="tabContent hi2" style="display:none">
+		  
+        </div>
+		 <div class="tabContent hi3" style="display:none">
+		  
+        </div></div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main reports" style="display:none;">
-		Case Analytics
+		Case Analytics - How long in program? GPA over time, attendance at counseling sessions, documents, location, treatment plan - red, green, yellow, http://www.oracle.com/webfolder/ux/mobile/img/gallery.png, guardian info, id, name, age, cell, email, home, average GPA by location
 	  </div>
 	  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main regulations" style="display:none;">
 		Regulation information (html)
