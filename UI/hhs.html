@@ -35,7 +35,6 @@
 	   $('#'+id).addClass("active");
 			$('.main').hide();
 			$('.'+id).show();
-			debugger;
 	   }
 	   
 	</script>
@@ -97,10 +96,32 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases">
           <table class="table table-hover list">
-			<tr onclick="showMain('homevisit');showDetails('fv1');"><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td><a href="#" >Sanchez, Jerry</a></td><td>UTAE0341422</td><td>Home Visit</td><td>High</td><td>></td></tr>
-			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha</td><td>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
-			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles</td><td>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
+		  <tr><th colspan=5>Today</th></tr>
+			<tr onclick="showMain('homevisit');showDetails('fv1');">
+				<td style="width:70px;"><div style="width:50px;height:60px;border:1px solid black"></div></td>
+				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
+				<td style="width:200px;">Home Visit</td>
+				<td>High</td>
+				<td style="width:70px;">></td>
+			</tr>
+			<tr><td ><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha<br>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
+			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles<br>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
 		  </table>
+		   <table class="table table-hover list">
+		  <tr><th colspan=5>Tomorrow</th></tr>
+			<tr onclick="showMain('homevisit');showDetails('fv1');">
+				<td style="width:70px;"><div style="width:50px;height:60px;border:1px solid black"></div></td>
+				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
+				<td style="width:200px;">Home Visit</td>
+				<td>High</td>
+				<td style="width:70px;">></td>
+			</tr>
+			<tr><td ><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha<br>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
+			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles<br>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
+		  </table>
+		  
+		  
+		  
         </div>
 		 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main childdetails" style="display:none;">
           <h1 class="page-header">Sanchez, Jerry</h1>
@@ -140,9 +161,9 @@
 			<div class="tabContent  summary" style="display:none">
 			<ul class="nav">   
 			<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
-			<li> <a href="#" onclick="showMain('homevisit');showDetails('fv1');"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Family Visit </a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Conduct Child Visit</a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Home Inspection</a></li>
+			<li> <a href="#" onclick="showMain('homevisit');showDetails('fv1');"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Family Visit </a></li>
+			<li> <a href="#" onclick="showMain('childvisit');showDetails('cv1');"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Child Visit</a></li>
+			<li> <a href="#" onclick="showMain('homeinspection');showDetails('hi1');"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Home Inspection</a></li>
 			<li> <a href="#"><span class=" glyphicon glyphicon-briefcase" aria-hidden="true"></span> Request Medication </a></li>
 			 </ul>
 			</div>
@@ -323,29 +344,8 @@
         </div>
 		</div>
         </div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main childvisitmain" style="display:none;">
-          <h1 class="page-header">Child Visit: Sanchez, Jerry</h1>
-
-          <div class="row ">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Jerry Sanchez, 16</h4>
-              <span class="text-muted">UTAE0341422</span>
-            </div>
-            <div class="col-xs-6 col-sm-4 ">
-             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
-			  <b>Race:</b> Hispanic/Latino<br />
-			  <b>School:</b> Lincoln High School<br />
-			 <b>Placement:</b> Jones Family<br />
-			 
-            </div>
-            <div class="col-xs-6 col-sm-4 ">
-        <ul class="nav">   
-			
-			 </ul>
-            </div>
-           
-          </div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main childvisit" style="display:none;">
+          <h1 class="page-header">Child Visit: <a href="#" onclick="showMain('childdetails');showDetails('summary');">Sanchez, Jerry</a></h1>
 
            <ul class="nav nav-tabs">
 		  		  
@@ -366,29 +366,9 @@
 		  Child Visit Form Part 1
         </div>
 		</div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main homeinspectionmain" style="display:none;">
-          <h1 class="page-header">Home Inspection: Sanchez, Jerry</h1>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main homeinspection" style="display:none;">
+          <h1 class="page-header">Home Inspection: <a href="#" onclick="showMain('childdetails');showDetails('summary');">Sanchez, Jerry</a></h1>
 
-          <div class="row ">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Jerry Sanchez, 16</h4>
-              <span class="text-muted">UTAE0341422</span>
-            </div>
-            <div class="col-xs-6 col-sm-4 ">
-             <p style="line-height:28px;"> <b>Birthdate:</b> May 03, 1998<br />
-			  <b>Race:</b> Hispanic/Latino<br />
-			  <b>School:</b> Lincoln High School<br />
-			 <b>Placement:</b> Jones Family<br />
-			 
-            </div>
-            <div class="col-xs-6 col-sm-4 ">
-        <ul class="nav">   
-			
-			 </ul>
-            </div>
-           
-          </div>
 
            <ul class="nav nav-tabs">
 		  		  
@@ -401,6 +381,13 @@
 	
 		  <div class="tabContent hi1" style="display:none">
 		  Take a picture of child's room, add visual sliders/indicators, create an assessment score. Meets, Partially, Does not Meet. 
+		  
+		  <input type=range min=0 max=10 value=10 id=fader step=5 list=volsettings>
+				<datalist id=volsettings>
+					<option>Does not meet</option>
+					<option>Partially Meets</option>
+					<option>Successfully Meets</option>
+				</datalist>
 		  </div>
 		 <div class="tabContent hi2" style="display:none">
 		  
