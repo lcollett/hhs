@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title> Child Welfare </title>
+
+<article data>
+<h1></h1>
+</article>
+
+<nav>
+  <input type=search placeholder=search>
+  <a href=#dashboard></a>
+  <a href=#my-cases></a>
+  <a href=#clients></a>
+  <a href=#documents></a>
+  <hr>
+  <a href=#reports></a>
+  <a href=#regulations></a>
+  <a href=#contacts></a>
+  <hr>
+  <a href=#about></a>
+  <a href=#help></a>
+  <a href=#feedback></a>
+</nav>
+
+<script src="model.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="App.js"></script>
+
+<style>
+  nav { display:flex; flex-direction:column }
+  * { outline:1px solid rgba(255,0,0,.1) }
+  [href]:before { content:attr(href); font-size:.3em }
+  html { font:5vw/1.6 HelveticaNeue; display:block }
+  * { font-size:1rem; box-sizing:border-box; margin:0; padding:0;
+    border-radius:.2em; border:0 }
+  input { font-family:inherit }
+  head, title { display:block }
+  [class]:before { content:attr(class) }
+</style>
+
