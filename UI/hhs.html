@@ -76,8 +76,8 @@
           </form>
           <ul class="nav nav-sidebar">
 		
-            <li onclick="showMain('mycases');"><a href="#">Dashboard </a></li>
-            <li class="active" onclick="showMain('mycases');"><a href="#">My Cases </a></li>
+            <li class="active" onclick="showMain('dashboard');"><a href="#">Dashboard </a></li>
+            <li  onclick="showMain('mycases');"><a href="#">My Cases </a></li>
             <li ><a href="#">Clients</a></li>
             <li><a href="#">Documents</a></li>
           </ul>
@@ -94,13 +94,58 @@
             <li><a href="">Feedback</a></li>
           </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases">
+		
+		<!--DASHBOARD -->
+		<div class="col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-2 main dashboard">
+		<div class="row" style="text-align:center;padding-bottom:30px;"><img src="img/charts.png" /></div>
+         <div class="row">
+			<div class="col-sm-6">
+				<table class="table table-hover list" style="border:1px solid #ddd">
+		  <tr><th colspan=4>Today </th><th><a href="#" onclick="showMain('mycases');"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></a></th></tr>
+			<tr onclick="showMain('homevisit');showDetails('fv1');">
+				<td>9:00am</td>
+				<td style="width:150px;">Sanchez, Jerry</td>
+				<td style="width:200px;">Family Visit</td>
+				<td>High</td>
+				<td style="width:70px;">></td>
+			</tr>
+			<tr><td>11:00am</td>
+			<td>Ryan, Samantha</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
+			<tr><td>1:00pm</td>
+			<td>Mitchell, Charles</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
+		  </table>
+		  
+			</div>
+			<div class="col-sm-6">
+				<table class="table table-hover list" style="border:1px solid #ddd">
+		  <tr><th colspan=4>Recent Clients</th></tr>
+			<tr onclick="showMain('homevisit');showDetails('fv1');">
+			  <td style="width:40px;"><div style="width:25px;height:35px;border:1px solid black"></div></td>
+				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
+				<td style="width:200px;"><div style="font-size:36px;font-weight:bold;height:60px;width:60px;border-radius:50%;background-color:red;color:white;text-align:center;vertical-align:middle;padding-top:5px;">40</div></td>
+				
+				<td style="width:70px;">></td>
+			</tr>
+			<tr>	<td style="width:40px;">			<div style="width:25px;height:35px;border:1px solid black"></div></td>
+			<td>Ryan, Samantha<br>UTAE098890</td><td><div style="font-size:36px;font-weight:bold;height:60px;width:60px;border-radius:50%;background-color:green;color:white;text-align:center;vertical-align:middle;padding-top:5px;">90</div></td><td></td></tr>
+			<tr>	<td style="width:40px;">			<div style="width:25px;height:35px;border:1px solid black"></div></td>
+			<td>Mitchell, Charles<br>UTAE096547</td><td><div style="font-size:36px;font-weight:bold;height:60px;width:60px;border-radius:50%;background-color:orange;color:white;text-align:center;vertical-align:middle;padding-top:5px;">70</div></td><td></td></tr>			
+		  </table>
+		  
+			</div>
+		 </div>
+		  
+		  
+		  
+        </div>
+		
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main mycases" style="display:none">
           <table class="table table-hover list">
 		  <tr><th colspan=5>Today</th></tr>
 			<tr onclick="showMain('homevisit');showDetails('fv1');">
 				<td style="width:70px;"><div style="width:50px;height:60px;border:1px solid black"></div></td>
 				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
-				<td style="width:200px;">Home Visit</td>
+				<td style="width:200px;">Family Visit</td>
 				<td>High</td>
 				<td style="width:70px;">></td>
 			</tr>
@@ -112,7 +157,7 @@
 			<tr onclick="showMain('homevisit');showDetails('fv1');">
 				<td style="width:70px;"><div style="width:50px;height:60px;border:1px solid black"></div></td>
 				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
-				<td style="width:200px;">Home Visit</td>
+				<td style="width:200px;">Family Visit</td>
 				<td>High</td>
 				<td style="width:70px;">></td>
 			</tr>
@@ -140,13 +185,12 @@
 			 
             </div>
             <div class="col-xs-6 col-sm-4 ">
-        <ul class="nav">   
-			<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Conduct Home Visit </a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Report Abuse</a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Request Relocation </a></li>
-			<li> <a href="#"><span class=" glyphicon glyphicon-briefcase" aria-hidden="true"></span> Request Medication </a></li>
-			 </ul>
+         <p style="line-height:28px;">
+			 <a href="#"><span class=" glyphicon glyphicon-envelope" aria-hidden="true"></span>  jsanchez@demo.com</a><br>
+			<a href="#"><span class=" glyphicon glyphicon-phone" aria-hidden="true"></span> 555-675-4567 </a><br>
+			 <a href="#"><span class=" glyphicon glyphicon-globe" aria-hidden="true"></span> Map</a>
+			</p>
+			 
             </div>
            
           </div>
