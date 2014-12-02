@@ -97,6 +97,7 @@
 		
 		<!--DASHBOARD -->
 		<div class="col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-2 main dashboard">
+		<h1 class="page-header">At a Glance</h1>
 		<div class="row" style="text-align:center;padding-bottom:30px;"><img src="img/charts.png" /></div>
          <div class="row">
 			<div class="col-sm-6">
@@ -119,12 +120,12 @@
 			<div class="col-sm-6">
 				<table class="table table-hover list" style="border:1px solid #ddd">
 		  <tr><th colspan=4>Recent Clients</th></tr>
-			<tr onclick="showMain('homevisit');showDetails('fv1');">
+			<tr onclick="showMain('childdetails');showDetails('summary');">
 			  <td style="width:40px;"><div style="width:25px;height:35px;border:1px solid black"></div></td>
 				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
 				<td style="width:200px;"><div style="font-size:36px;font-weight:bold;height:60px;width:60px;border-radius:50%;background-color:red;color:white;text-align:center;vertical-align:middle;padding-top:5px;">40</div></td>
 				
-				<td style="width:70px;">></td>
+				<td style="width:70px;"></td>
 			</tr>
 			<tr>	<td style="width:40px;">			<div style="width:25px;height:35px;border:1px solid black"></div></td>
 			<td>Ryan, Samantha<br>UTAE098890</td><td><div style="font-size:36px;font-weight:bold;height:60px;width:60px;border-radius:50%;background-color:green;color:white;text-align:center;vertical-align:middle;padding-top:5px;">90</div></td><td></td></tr>
@@ -143,14 +144,14 @@
           <table class="table table-hover list">
 		  <tr><th colspan=5>Today</th></tr>
 			<tr onclick="showMain('homevisit');showDetails('fv1');">
-				<td style="width:70px;"><div style="width:50px;height:60px;border:1px solid black"></div></td>
+				<td style="width:70px;"><img src="img/110.png" style="width:50px;border:1px solid black"></td>
 				<td style="width:150px;">Sanchez, Jerry<br>UTAE0341422</td>
 				<td style="width:200px;">Family Visit</td>
 				<td>High</td>
 				<td style="width:70px;">></td>
 			</tr>
-			<tr><td ><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Ryan, Samantha<br>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
-			<tr><td><div style="width:50px;height:60px;border:1px solid black"></div></td><td>Mitchell, Charles<br>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
+			<tr><td ><img src="img/101.png" style="width:50px;border:1px solid black"></td><td>Ryan, Samantha<br>UTAE098890</td><td>Safety Assessment</td><td>Low</td><td>></td></tr>
+			<tr><td><img src="img/112.png" style="width:50px;border:1px solid black"></td><td>Mitchell, Charles<br>UTAE096547</td><td>Relocation</td><td>Normal</td><td>></td></tr>			
 		  </table>
 		   <table class="table table-hover list">
 		  <tr><th colspan=5>Tomorrow</th></tr>
@@ -173,7 +174,7 @@
 
           <div class="row ">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="img/110.png" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Jerry Sanchez, 16</h4>
               <span class="text-muted">UTAE0341422</span>
             </div>
@@ -203,13 +204,15 @@
 		<li role="presentation" class="active" onclick=" showDetails(this.id);" id="casehistory" ><a href="#" >Case History <span class="badge">1</span></a></li>  
 			</ul>
 			<div class="tabContent  summary" style="display:none">
-			<ul class="nav">   
+			<div class="row"><div class="col-xs-6 col-sm-8 "><img src="img/chartsshort.png" width="auto"></div><div class="col-sm-4"><ul class="nav">   
 			<li> <a href="#"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span> Safety Assessment </a></li>
 			<li> <a href="#" onclick="showMain('homevisit');showDetails('fv1');"><span class=" glyphicon glyphicon-home" aria-hidden="true"></span> Family Visit </a></li>
 			<li> <a href="#" onclick="showMain('childvisit');showDetails('cv1');"><span class=" glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Child Visit</a></li>
 			<li> <a href="#" onclick="showMain('homeinspection');showDetails('hi1');"><span class=" glyphicon glyphicon-pushpin" aria-hidden="true"></span> Home Inspection</a></li>
 			<li> <a href="#"><span class=" glyphicon glyphicon-briefcase" aria-hidden="true"></span> Request Medication </a></li>
-			 </ul>
+			 </ul></div></div>
+			<div class="row"><div class="col-xs-6 col-sm-6 "><img src="img/summary.png"></div></div>
+			
 			</div>
 			<div class="tabContent demographics" style="display:none">
 			
