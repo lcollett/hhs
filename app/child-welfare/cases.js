@@ -29,7 +29,8 @@ var cases = [
               { type:'radio', value:value, name:title }));
             fieldset.appendChild(label);
           });
-        $E('input', { type:'range', name:title }).outerHTML;
+        fieldset.appendChild($E('textarea', 
+          { name:'comments', placeholder:'Please provide comments' }));
         return fieldset.outerHTML;
       }).join('')
     }
