@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
 <title> Child Welfare </title>
+<link rel=stylesheet href=screen.css>
 
-<nav>
+<nav id=#>
   <input type=search placeholder=search>
+  <a href=#cases>My Cases</a>
+  <a href=#children>Children</a>
 </nav>
 
-<article data>
-<h1></h1>
+<article id=cases data></article>
+<article id=children data>
 </article>
 
-<script src="App.js"></script>
-<script src="config.js"></script>
 
-<style>
-  a { text-decoration:none }
-  nav { display:flex; flex-direction:column }
-  html { font:5vw/1.6 HelveticaNeue; background:#333 }
-  * { font-size:1rem; box-sizing:border-box; margin:0; padding:0;
-    background:rgba(255,255,255,.6); color:#333;
-    border-radius:3px; border:0 }
-  input { font-family:inherit }
-  head, title { display:block }
-  *{ outline:1px solid rgba(0,0,0,.1) }
-</style>
 
+
+<script src="lib/$.js"></script>
+<script src="cases.js"></script>
+<script src="children.js"></script>
+<script>
+  $('[id][data]')
+    .on('load', function(){
+      var context = arguments[0].detail,
+          data = context[this.id];
+      data.forEach(function(item){
+        for (var property in item)
+          //console.log(this.id, property, item[property]),
+          this.trigger('generate', { key:property, value:item[property] });
+      }.bind(this));
+    })
+    .on('generate', function(){ 
+      var data = arguments[0].detail,
+          key = data.key,
+          value = data.value;
+      // maybe copy attributes: '[attr]'
+      key.replace(/^\[(\w+)\]$/, function(sel, attr){
+        if (attr in this)
+          this[attr] = value;
+      }.bind(this));
+      // maybe create children: '>tagName.classname'
+      key.replace(/^>(\w+)\.?(\w*)/, function(sel, tagName, className){
+        var el = document.createElement(tagName);
+        el.className = className;
+        el.innerHTML = value;
+        this.appendChild(el);
+      }.bind(this));
+    })
+    .trigger('load', this);
+  
+
+  
+  
+  
+  
+</script>
